@@ -12,17 +12,14 @@ use Magento\Sales\Model\Order\Status;
 use Magento\Sales\Model\Order\StatusFactory;
 use Magento\Sales\Model\ResourceModel\Order\Status as StatusResource;
 use Magento\Sales\Model\ResourceModel\Order\StatusFactory as StatusResourceFactory;
-
 /**
  * Class InstallData
  */
-class InstallData implements InstallDataInterface
-{
+class InstallData implements InstallDataInterface {
     /**
      * Custom Processing Order-Status code
      */
     const ORDER_STATUS_PROCESSING_FULFILLMENT_CODE = 'processing_custom';
-
     /**
      * Custom Processing Order-Status label
      */
@@ -32,31 +29,26 @@ class InstallData implements InstallDataInterface
      * Custom Order-State code
      */
     const ORDER_STATE_CUSTOM_CODE = 'some_custom_state';
-
     /**
      * Custom Order-Status code
      */
     const ORDER_STATUS_CUSTOM_CODE = 'some_custom_status';
-
     /**
      * Custom Order-Status label
      */
     const ORDER_STATUS_CUSTOM_LABEL = 'Some Custom Status';
-
     /**
      * Status Factory
      *
      * @var StatusFactory
      */
     protected $statusFactory;
-
     /**
      * Status Resource Factory
      *
      * @var StatusResourceFactory
      */
     protected $statusResourceFactory;
-
     /**
      * InstallData constructor
      *
@@ -70,7 +62,6 @@ class InstallData implements InstallDataInterface
         $this->statusFactory = $statusFactory;
         $this->statusResourceFactory = $statusResourceFactory;
     }
-
     /**
      * Installs data for a module
      *
@@ -86,7 +77,6 @@ class InstallData implements InstallDataInterface
         $this->addNewOrderProcessingStatus();
         $this->addNewOrderStateAndStatus();
     }
-
     /**
      * Create new order processing status and assign it to the existent state
      *
@@ -94,8 +84,7 @@ class InstallData implements InstallDataInterface
      *
      * @throws Exception
      */
-    protected function addNewOrderProcessingStatus()
-    {
+    protected function addNewOrderProcessingStatus() {
         /** @var StatusResource $statusResource */
         $statusResource = $this->statusResourceFactory->create();
         /** @var Status $status */
@@ -122,8 +111,7 @@ class InstallData implements InstallDataInterface
      *
      * @throws Exception
      */
-    protected function addNewOrderStateAndStatus()
-    {
+    protected function addNewOrderStateAndStatus(){
         /** @var StatusResource $statusResource */
         $statusResource = $this->statusResourceFactory->create();
         /** @var Status $status */
@@ -132,14 +120,12 @@ class InstallData implements InstallDataInterface
             'status' => self::ORDER_STATUS_CUSTOM_CODE,
             'label' => self::ORDER_STATUS_CUSTOM_LABEL,
         ]);
-
         try {
             $statusResource->save($status);
         } catch (AlreadyExistsException $exception) {
 
             return;
         }
-
         $status->assignState(self::ORDER_STATE_CUSTOM_CODE, true, true);
     }
 }
