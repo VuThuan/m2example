@@ -12,22 +12,23 @@
 - [app/code/Bdcrops/NewproductType/registration.php](registration.php)
 
 
-<details><summary>Source</summary>
+    <details><summary>Source</summary>
 
-```
-<?php
-    \Magento\Framework\Component\ComponentRegistrar::register(
-        \Magento\Framework\Component\ComponentRegistrar::MODULE,
-        'Bdcrops_NewproductType',
-        __DIR__
-    );
-```
-</details>
+    ```
+    <?php
+        \Magento\Framework\Component\ComponentRegistrar::register(
+            \Magento\Framework\Component\ComponentRegistrar::MODULE,
+            'Bdcrops_NewproductType',
+            __DIR__
+        );
+    ```
+    </details>
 
 
 - [app/code/Bdcrops/NewproductType/etc/module.xml](etc/module.xml)
 
     <details><summary>Source</summary>
+
     ```
     <?xml version="1.0"?>
     <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
