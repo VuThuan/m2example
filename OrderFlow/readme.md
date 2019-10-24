@@ -13,7 +13,7 @@ Now you can check the results in Stores -> Settings -> Order Status.
 
 ## Step By Step Tutorials
 
-- [app/code/Bdcrops/OrderFlow/registration.php](OrderFlow/registration.php)
+- [app/code/Bdcrops/OrderFlow/registration.php](registration.php)
 ```
 <?php
     \Magento\Framework\Component\ComponentRegistrar::register(
@@ -22,7 +22,7 @@ Now you can check the results in Stores -> Settings -> Order Status.
     );
 ```
 
-- [app/code/Bdcrops/OrderFlow/etc/module.xml](OrderFlow/etc/module.xml)
+- [app/code/Bdcrops/OrderFlow/etc/module.xml](etc/module.xml)
 ```
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
@@ -34,7 +34,7 @@ Now you can check the results in Stores -> Settings -> Order Status.
 
 ```
 
-- [app/code/Bdcrops/OrderFlow/Setup/InstallData.php](OrderFlow/Setup/InstallData.php)
+- [app/code/Bdcrops/OrderFlow/Setup/InstallData.php](Setup/InstallData.php)
 
 ```
 <?php
@@ -172,4 +172,4 @@ class InstallData implements InstallDataInterface {
 ```
 
 ## Ref:
-- [] (https://www.atwix.com/magento-2/create-new-order-state-and-status-programmatically-in-magento-2/)
+- [](https://www.atwix.com/magento-2/create-new-order-state-and-status-programmatically-in-magento-2/)
