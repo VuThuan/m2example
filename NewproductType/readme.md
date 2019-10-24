@@ -11,8 +11,11 @@
 
 - [app/code/Bdcrops/NewproductType/registration.php](registration.php)
 
+
 <details><summary>Source</summary>
-```<?php
+
+```
+<?php
     \Magento\Framework\Component\ComponentRegistrar::register(
         \Magento\Framework\Component\ComponentRegistrar::MODULE,
         'Bdcrops_NewproductType',
