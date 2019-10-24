@@ -10,6 +10,7 @@
 
 
 - [app/code/Bdcrops/NewproductType/registration.php](registration.php)
+
 <details><summary>Source</summary>
 ```<?php
     \Magento\Framework\Component\ComponentRegistrar::register(
@@ -19,6 +20,8 @@
     );
 ```
 </details>
+
+
 - [app/code/Bdcrops/NewproductType/etc/module.xml](etc/module.xml)
 ```
 <?xml version="1.0"?>
