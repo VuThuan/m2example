@@ -26,13 +26,17 @@
 
 
 - [app/code/Bdcrops/NewproductType/etc/module.xml](etc/module.xml)
-```
-<?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="Bdcrops_NewproductType" setup_version="1.0.0"/>
-</config>
 
-```
+    <details><summary>Source</summary>
+    ```
+    <?xml version="1.0"?>
+    <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Bdcrops_NewproductType" setup_version="1.0.0"/>
+    </config>
+    ```
+    </details>
+
+
 - [app/code/Bdcrops/NewproductType/etc/product_types.xml](etc/product_types.xml)
 ```
 <?xml version="1.0"?>
