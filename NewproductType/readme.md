@@ -9,14 +9,19 @@
 ## Step By Step Tutorials
 
 - [app/code/Bdcrops/NewproductType/registration.php](registration.php)
-```
-<?php
-    \Magento\Framework\Component\ComponentRegistrar::register(
-        \Magento\Framework\Component\ComponentRegistrar::MODULE,
-        'Bdcrops_NewproductType',
-        __DIR__
-    );
-```
+<details>
+  <summary>SourceCode</summary>
+  ```
+  <?php
+      \Magento\Framework\Component\ComponentRegistrar::register(
+          \Magento\Framework\Component\ComponentRegistrar::MODULE,
+          'Bdcrops_NewproductType',
+          __DIR__
+      );
+  ```
+</details>
+
+
 - [app/code/Bdcrops/NewproductType/etc/module.xml](etc/module.xml)
 ```
 <?xml version="1.0"?>
