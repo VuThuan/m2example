@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/catalogRules/:ruleId" method="GET">
+        <service class="Magento\CatalogRule\Api\CatalogRuleRepositoryInterface" method="get"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+	<route url="/V1/catalogRules/search" method="GET">
+        <service class="Bdcrops\CatalogRuleApi\Api\CatalogRuleRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/catalogRules/:ruleId" method="DELETE">
+        <service class="Magento\CatalogRule\Api\CatalogRuleRepositoryInterface" method="deleteById"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/catalogRules/:ruleId" method="PUT">
+        <service class="Magento\CatalogRule\Api\CatalogRuleRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/catalogRules" method="POST">
+        <service class="Magento\CatalogRule\Api\CatalogRuleRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+</routes>
