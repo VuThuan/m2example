@@ -198,24 +198,23 @@ At this point now we can execute the below REST API methods V1/catalogRules/:rul
 
 - [app/code/Bdcrops/CatalogRuleApi/etc/di.xml](etc/di.xml)
 
-      <details><summary>Source</summary>
+  <details><summary>Source</summary>
 
-      ```
-      <?xml version="1.0"?>
-      <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-          <preference for="Bdcrops\CatalogRuleApi\Api\CatalogRuleRepositoryInterface"
-      	            type="Bdcrops\CatalogRuleApi\Model\CatalogRuleManagement" />
-          <preference for="Magento\CatalogRule\Api\CatalogRuleRepositoryInterface"
-                  	type="Magento\CatalogRule\Model\CatalogRuleRepository" />
-      	<!-- Plugin to Hook the Get Method -->
-      	  <type name="Magento\CatalogRule\Api\CatalogRuleRepositoryInterface">
-              <plugin name="bdcrops_add_websitecustomerids_extension_attribute" type="Bdcrops\CatalogRuleApi\Plugin\CatalogRuleRepositoryPlugin" />
-          </type>
-      </config>
+    ```
+    <?xml version="1.0"?>
+    <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+      <preference for="Bdcrops\CatalogRuleApi\Api\CatalogRuleRepositoryInterface"
+                type="Bdcrops\CatalogRuleApi\Model\CatalogRuleManagement" />
+      <preference for="Magento\CatalogRule\Api\CatalogRuleRepositoryInterface"
+              	type="Magento\CatalogRule\Model\CatalogRuleRepository" />
+    <!-- Plugin to Hook the Get Method -->
+      <type name="Magento\CatalogRule\Api\CatalogRuleRepositoryInterface">
+          <plugin name="bdcrops_add_websitecustomerids_extension_attribute" type="Bdcrops\CatalogRuleApi\Plugin\CatalogRuleRepositoryPlugin" />
+      </type>
+    </config>
 
-      ```
-
-      </details>
+    ```
+  </details>
 
   - [app/code/Bdcrops/CatalogRuleApi/Plugin/CatalogRuleRepositoryPlugin.php](Plugin/CatalogRuleRepositoryPlugin.php)
 
