@@ -143,7 +143,7 @@ http://www.magento233.lan/rest/V1/catalogRules/1
 
 At this point now we can execute the below REST API methods V1/catalogRules/:ruleId GET, DELETE, POST, PUT. But the problem here is the GET Method returns data without website_ids and customer_group_ids as show in the below screenshot.
 
-![](docs/CatalogRules-GetRule-1024x743)
+![](docs/CatalogRules-GetRule-1024x743.png)
 
 - [app/code/Bdcrops/CatalogRuleApi/etc/extension_attributes.xml](etc/extension_attributes.xml)
 
@@ -196,7 +196,7 @@ At this point now we can execute the below REST API methods V1/catalogRules/:rul
   ```
   </details>
 
-  - [app/code/Bdcrops/CatalogRuleApi/etc/di.xml](etc/di.xml)
+- [app/code/Bdcrops/CatalogRuleApi/etc/di.xml](etc/di.xml)
 
       <details><summary>Source</summary>
 
