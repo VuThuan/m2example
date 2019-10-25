@@ -198,7 +198,6 @@ At this point now we can execute the below REST API methods V1/catalogRules/:rul
 
 - [app/code/Bdcrops/CatalogRuleApi/etc/di.xml](etc/di.xml)
 
-
       <details><summary>Source</summary>
 
       ```
@@ -215,8 +214,8 @@ At this point now we can execute the below REST API methods V1/catalogRules/:rul
       </config>
 
       ```
-      </details>
 
+      </details>
 
   - [app/code/Bdcrops/CatalogRuleApi/Plugin/CatalogRuleRepositoryPlugin.php](Plugin/CatalogRuleRepositoryPlugin.php)
 
