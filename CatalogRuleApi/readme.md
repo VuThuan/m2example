@@ -42,20 +42,9 @@ http://www.magento233.lan/rest/V1/catalogRules/1
 
 - [app/code/Bdcrops/CatalogRuleApi/etc/webapi.xml](etc/webapi.xml)
 
-    we need to create an webapi.xml file to define the REST API End Points.
 
-    The Core Magento 2 CatalogRule module already contains the necessary code for carrying out the API Operation in the below files, only drawback is those methods were not exposed as webapi end points. Lets define the REST API route path as “catalogRules”.
-
-    Though the main methods are all available in magento core, the “getList” method is not available by default and we will implement it separately. For this demo i am skipping the ACL Part and defining the “resource ref” as anonymous
-
-    Magento 2 Core Files Reference:-
-    Magento\CatalogRule\Api\interface\CatalogRuleRepositoryInterface
-
-    Magento\CatalogRule\Model\Rule.php
-
-
-      <details><summary>Source</summary>
-
+    <details><summary>Source</summary>
+    
       ```
       <?xml version="1.0"?>
       <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -92,7 +81,6 @@ http://www.magento233.lan/rest/V1/catalogRules/1
           </route>
       </routes>
       ```
-      
       </details>
 
 
