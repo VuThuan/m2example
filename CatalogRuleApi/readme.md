@@ -42,11 +42,77 @@ http://www.magento233.lan/rest/V1/catalogRules/1
 
 - [app/code/Bdcrops/CatalogRuleApi/etc/webapi.xml](etc/webapi.xml)
 
+    we need to create an webapi.xml file to define the REST API End Points.
+
+    The Core Magento 2 CatalogRule module already contains the necessary code for carrying out the API Operation in the below files, only drawback is those methods were not exposed as webapi end points. Lets define the REST API route path as “catalogRules”.
+
+    Though the main methods are all available in magento core, the “getList” method is not available by default and we will implement it separately. For this demo i am skipping the ACL Part and defining the “resource ref” as anonymous
+
+    Magento 2 Core Files Reference:-
+    Magento\CatalogRule\Api\interface\CatalogRuleRepositoryInterface
+
+    Magento\CatalogRule\Model\Rule.php
+
+      <details><summary>Source</summary>
+      ```
+      <?xml version="1.0"?>
+      <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+          <route url="/V1/catalogRules/:ruleId" method="GET">
+              <service class="Magento\CatalogRule\Api\CatalogRuleRepositoryInterface" method="get"/>
+              <resources>
+                  <resource ref="anonymous" />
+              </resources>
+          </route>
+      	<route url="/V1/catalogRules/search" method="GET">
+              <service class="Bdcrops\CatalogRuleApi\Api\CatalogRuleRepositoryInterface" method="getList"/>
+              <resources>
+                  <resource ref="anonymous" />
+              </resources>
+          </route>
+          <route url="/V1/catalogRules/:ruleId" method="DELETE">
+              <service class="Magento\CatalogRule\Api\CatalogRuleRepositoryInterface" method="deleteById"/>
+              <resources>
+                  <resource ref="anonymous" />
+              </resources>
+          </route>
+          <route url="/V1/catalogRules/:ruleId" method="PUT">
+              <service class="Magento\CatalogRule\Api\CatalogRuleRepositoryInterface" method="save"/>
+              <resources>
+                  <resource ref="anonymous" />
+              </resources>
+          </route>
+          <route url="/V1/catalogRules" method="POST">
+              <service class="Magento\CatalogRule\Api\CatalogRuleRepositoryInterface" method="save"/>
+              <resources>
+                  <resource ref="anonymous" />
+              </resources>
+          </route>
+      </routes>
+      ```
+      </details>
+
 - [app/code/Bdcrops/CatalogRuleApi/Api/CatalogRuleRepositoryInterface.php](Api/CatalogRuleRepositoryInterface.php)
 
+    <details><summary>Source</summary>
+
+    ```
+
+    ```
+    </details>
+
+
 - [app/code/Bdcrops/CatalogRuleApi/etc/di.xml](etc/di.xml)
+    <details><summary>Source</summary>
+
+    ```
+
+    ```
+    </details>
+
 
 - Result
+
 At this point now we can execute the below REST API methods V1/catalogRules/:ruleId GET, DELETE, POST, PUT. But the problem here is the GET Method returns data without website_ids and customer_group_ids as show in the below screenshot.
 
 ![](docs/CatalogRules-GetRule-1024x743)

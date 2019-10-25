@@ -9,14 +9,19 @@
 ## Step By Step Tutorials
 
 - [app/code/Bdcrops/AttributesSet/registration.php](registration.php)
-```
-<?php
-    \Magento\Framework\Component\ComponentRegistrar::register(
-        \Magento\Framework\Component\ComponentRegistrar::MODULE,
-        'Bdcrops_AttributesSet',
-        __DIR__
-    );
-```
+
+    <details><summary>Source</summary>
+    ```
+    <?php
+        \Magento\Framework\Component\ComponentRegistrar::register(
+            \Magento\Framework\Component\ComponentRegistrar::MODULE,
+            'Bdcrops_AttributesSet',
+            __DIR__
+        );
+    ```
+    </details>
+
+
 - [app/code/Bdcrops/AttributesSet/etc/module.xml](etc/module.xml)
 ```
 <?xml version="1.0"?>
