@@ -4,7 +4,6 @@ namespace Bdcrops\CatalogRuleApi\Api;
 use \Magento\Framework\Api\SearchCriteriaInterface;
 
 interface CatalogRuleRepositoryInterface {
-
     /**
      * Get rules
      * @param \Magento\Framework\Api\SearchCriteriaInterface $searchCriteria
