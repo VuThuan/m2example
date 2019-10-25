@@ -216,7 +216,7 @@ At this point now we can execute the below REST API methods V1/catalogRules/:rul
     ```
   </details>
 
-  - [app/code/Bdcrops/CatalogRuleApi/Plugin/CatalogRuleRepositoryPlugin.php](Plugin/CatalogRuleRepositoryPlugin.php)
+- [app/code/Bdcrops/CatalogRuleApi/Plugin/CatalogRuleRepositoryPlugin.php](Plugin/CatalogRuleRepositoryPlugin.php)
 
   <details><summary>Source</summary>
 
