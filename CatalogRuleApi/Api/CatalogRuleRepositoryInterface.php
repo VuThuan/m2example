@@ -10,6 +10,7 @@ interface CatalogRuleRepositoryInterface {
      * @param \Magento\Framework\Api\SearchCriteriaInterface $searchCriteria
      * @return \Magento\Framework\Api\SearchResultsInterface
      */
-     public function getList(\Magento\Framework\Api\SearchCriteriaInterface $searchCriteria);
+     public function getList(
+       \Magento\Framework\Api\SearchCriteriaInterface $searchCriteria);
 
 }
