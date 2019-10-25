@@ -55,6 +55,7 @@ http://www.magento233.lan/rest/V1/catalogRules/1
 
 
       <details><summary>Source</summary>
+
       ```
       <?xml version="1.0"?>
       <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -91,8 +92,9 @@ http://www.magento233.lan/rest/V1/catalogRules/1
           </route>
       </routes>
       ```
-      </details>
       
+      </details>
+
 
 - [app/code/Bdcrops/CatalogRuleApi/Api/CatalogRuleRepositoryInterface.php](Api/CatalogRuleRepositoryInterface.php)
 
