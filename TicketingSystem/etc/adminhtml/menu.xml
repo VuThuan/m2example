@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+      <add id="Bdcrops_TicketingSystem::ticketingsystem" title="Ticketing System" module="Bdcrops_TicketingSystem" sortOrder="51" resource="Bdcrops_TicketingSystem::ticketingsystem"/>
+      <add id="Bdcrops_TicketingSystem::manage" title="Manage Tickets" module="Bdcrops_TicketingSystem" sortOrder="10" action="ticketingsystem/tickets/index" resource="Bdcrops_TicketingSystem::manage" parent="Bdcrops_TicketingSystem::ticketingsystem"/>
+    </menu>
+</config>

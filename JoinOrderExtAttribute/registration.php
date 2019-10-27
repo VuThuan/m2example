@@ -1,6 +1,6 @@
 <?php
     \Magento\Framework\Component\ComponentRegistrar::register(
         \Magento\Framework\Component\ComponentRegistrar::MODULE,
-        'Bdcrops_CategoryImport',
+        'Bdcrops_JoinOrderExtAttribute',
         __DIR__
     );

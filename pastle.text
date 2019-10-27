@@ -1,6 +1,6 @@
 
 php pestle.phar generate_module Bdcrops HelloPestle 1.0.0
-php pestle.phar generate_module Bdcrops CategoryImport 1.0.0
+php pestle.phar generate_module Bdcrops TicketingSystem 1.0.0
 
 pestle.phar generate_route Pulsestorm_HelloPestle frontend hello_pestle
 pestle.phar generate_view Pulsestorm_HelloPestle frontend hello_pestle_index_index Main content.phtml
