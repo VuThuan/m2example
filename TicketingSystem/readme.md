@@ -35,6 +35,36 @@ For the purpose of this article we will create simple Ticketing system admin gri
 -
 
 
+- TicketingSystem/Block/Adminhtml/Module/Grid/Renderer/Action/UrlBuilder.php
+ - TicketingSystem/Block/Adminhtml/Tickets/Add.php
+ - TicketingSystem/Block/Adminhtml/Tickets/Edit/Form.php
+ - TicketingSystem/Block/Create.php
+ - TicketingSystem/Block/Manage.php
+ - TicketingSystem/Controller/Adminhtml/Tickets/Add.php
+ - TicketingSystem/Controller/Adminhtml/Tickets/Index.php
+ - TicketingSystem/Controller/Adminhtml/Tickets/Save.php
+ - TicketingSystem/Controller/Create/Index.php
+ - TicketingSystem/Controller/Manage/Index.php
+ - TicketingSystem/Model/ResourceModel/Tickets.php
+ - TicketingSystem/Model/ResourceModel/Tickets/Collection.php
+ - TicketingSystem/Model/Source/Category.php
+ - TicketingSystem/Model/Source/Priority.php
+ - TicketingSystem/Model/Source/Status.php
+ - TicketingSystem/Model/Tickets.php
+ - TicketingSystem/Setup/InstallSchema.php
+ - TicketingSystem/Ui/Component/Listing/Column/Actions.php
+ - TicketingSystem/Ui/Component/Listing/Column/Update.php
+ - TicketingSystem/docs/adminMenu.png
+ - TicketingSystem/docs/ticketEdit.png
+ - TicketingSystem/docs/ticketFrontend.png
+ - TicketingSystem/docs/ticketList.png
+ - TicketingSystem/etc/adminhtml/menu.xml
+ - TicketingSystem/etc/adminhtml/routes.xml
+ - TicketingSystem/etc/di.xml
+ - TicketingSystem/etc/frontend/routes.xml
+ - TicketingSystem/view/adminhtml/layout/ticketingsystem_tickets_add.xml
+ - TicketingSystem/view/adminhtml/layout/ticketingsystem_tickets_index.xml
+ - TicketingSystem/view/adminhtml/ui_component/ticketingsystem_tickets_listing.xml
 
 
 
