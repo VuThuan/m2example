@@ -20,61 +20,57 @@ For the purpose of this article we will create simple Ticketing system admin gri
 
 ## Create Module Step By Step Tutorials
 
-- TicketingSystem/registration.php
-- TicketingSystem/etc/module.xml
-- TicketingSystem/etc/adminhtml/routes.xml
-- TicketingSystem/etc/adminhtml/menu.xml
-- TicketingSystem/Controller/Adminhtml/Tickets/Index.php
+- [/registration.php](registration.php)
+- [/etc/module.xml](etc/module.xml)
+- [/etc/adminhtml/routes.xml](etc/adminhtml/routes.xml)
+- [/etc/adminhtml/menu.xml](etc/adminhtml/menu.xml)
+- [/etc/frontend/routes.xml](etc/frontend/routes.xml)
+- [/Controller/Adminhtml/Tickets/Index.php](Controller/Adminhtml/Tickets/Index.php)
+- [/etc/db_schema.xml](etc/db_schema.xml)
+- [/Setup/Patch/Data/NonRevertable.php](Setup/Patch/Data/NonRevertable.php)
+- [/Setup/Patch/Data/Revertable.php](Setup/Patch/Data/Revertable.php)
 
-- TicketingSystem/etc/db_schema.xml
-- TicketingSystem/Setup/Patch/Data/NonRevertable.php
-- TicketingSystem/Setup/Patch/Data/Revertable.php
+  ```
+  php bin/magento setup:db-declaration:generate-whitelist [options]
+  php bin/magento setup:db-declaration:generate-whitelist --module-name=vendor_module
 
-```
-php bin/magento setup:db-declaration:generate-whitelist [options]
-php bin/magento setup:db-declaration:generate-whitelist --module-name=vendor_module
+  php bin/magento setup:db-declaration:generate-whitelist --module-name=Bdcrops_TicketingSystem
+  php bin/magento setup:upgrade --dry-run=1 --keep-generated
+  php bin/magento setup:upgrade
 
-php bin/magento setup:db-declaration:generate-whitelist --module-name=Bdcrops_TicketingSystem
-php bin/magento setup:upgrade --dry-run=1 --keep-generated
-```
+  ```
 
-![](docs/schemaWhilteList.png)
-![](docs/dataPatch.png)
-![](docs/DataTable.png)
+  ![](docs/schemaWhilteList.png)
+  ![](docs/dataPatch.png)
+  ![](docs/DataTable.png)
 
-- TicketingSystem/Model/Tickets.php
-- TicketingSystem/Model/ResourceModel/Tickets.php
-- TicketingSystem/Model/ResourceModel/Tickets/Collection.php
-- TicketingSystem/etc/di.xml
-- TicketingSystem/view/adminhtml/layout/ticketingsystem_tickets_index.xml
-- TicketingSystem/view/adminhtml/ui_component/ticketingsystem_tickets_listing.xml
-
-- TicketingSystem/Block/Adminhtml/Module/Grid/Renderer/Action/UrlBuilder.php
-- TicketingSystem/Block/Adminhtml/Tickets/Add.php
-- TicketingSystem/Block/Adminhtml/Tickets/Edit/Form.php
-- TicketingSystem/Block/Create.php
-- TicketingSystem/Block/Manage.php
-- TicketingSystem/Controller/Adminhtml/Tickets/Add.php
-- TicketingSystem/Controller/Adminhtml/Tickets/Index.php
-- TicketingSystem/Controller/Adminhtml/Tickets/Save.php
-- TicketingSystem/Controller/Create/Index.php
-- TicketingSystem/Controller/Manage/Index.php
-- TicketingSystem/Model/ResourceModel/Tickets.php
-- TicketingSystem/Model/ResourceModel/Tickets/Collection.php
-- TicketingSystem/Model/Source/Category.php
-- TicketingSystem/Model/Source/Priority.php
-- TicketingSystem/Model/Source/Status.php
-- TicketingSystem/Model/Tickets.php
-- TicketingSystem/Setup/InstallSchema.php
-- TicketingSystem/Ui/Component/Listing/Column/Actions.php
-- TicketingSystem/Ui/Component/Listing/Column/Update.php
-- TicketingSystem/etc/adminhtml/menu.xml
-- TicketingSystem/etc/adminhtml/routes.xml
-- TicketingSystem/etc/di.xml
-- TicketingSystem/etc/frontend/routes.xml
-- TicketingSystem/view/adminhtml/layout/ticketingsystem_tickets_add.xml
-- TicketingSystem/view/adminhtml/layout/ticketingsystem_tickets_index.xml
-- TicketingSystem/view/adminhtml/ui_component/ticketingsystem_tickets_listing.xml
+- [Model/Tickets.php](Model/Tickets.php)
+- [Model/ResourceModel/Tickets.php](Model/ResourceModel/Tickets.php)
+- [Model/ResourceModel/Tickets/Collection.php](Model/ResourceModel/Tickets/Collection.php)
+- [etc/di.xml](etc/di.xml)
+- [Controller/Adminhtml/Tickets/Add.php](Controller/Adminhtml/Tickets/Add.php)
+- [Controller/Adminhtml/Tickets/Index.php](Controller/Adminhtml/Tickets/Index.php)
+- [Controller/Adminhtml/Tickets/Save.php](Controller/Adminhtml/Tickets/Save.php)
+- [Controller/Create/Index.php](Controller/Create/Index.php)
+- [Controller/Manage/Index.php](Controller/Manage/Index.php)
+- [Model/ResourceModel/Tickets.php](Model/ResourceModel/Tickets.php)
+- [Model/ResourceModel/Tickets/Collection.php](Model/ResourceModel/Tickets/Collection.php)
+- [Model/Source/Category.php](Model/Source/Category.php)
+- [Model/Source/Priority.php](Model/Source/Priority.php)
+- [Model/Source/Status.php](Model/Source/Status.php)
+- [Model/Tickets.php](Model/Tickets.php)
+- [view/adminhtml/layout/ticketingsystem_tickets_index.xml](view/adminhtml/layout/ticketingsystem_tickets_index.xml)
+- [view/adminhtml/ui_component/ticketingsystem_tickets_listing.xml](view/adminhtml/ui_component/ticketingsystem_tickets_listing.xml)
+- [Block/Adminhtml/Module/Grid/Renderer/Action/UrlBuilder.php](Block/Adminhtml/Module/Grid/Renderer/Action/UrlBuilder.php)
+- [Block/Adminhtml/Tickets/Add.php](Block/Adminhtml/Tickets/Add.php)
+- [Block/Adminhtml/Tickets/Edit/Form.php](Block/Adminhtml/Tickets/Edit/Form.php)
+- [Block/Create.php](Block/Create.php)
+- [Block/Manage.php](Block/Manage.php)
+- [Ui/Component/Listing/Column/Actions.php](Ui/Component/Listing/Column/Actions.php)
+- [Ui/Component/Listing/Column/Update.php](Ui/Component/Listing/Column/Update.php)
+- [view/adminhtml/layout/ticketingsystem_tickets_add.xml](view/adminhtml/layout/ticketingsystem_tickets_add.xml)
+- [view/adminhtml/layout/ticketingsystem_tickets_index.xml](view/adminhtml/layout/ticketingsystem_tickets_index.xml)
+- [view/adminhtml/ui_component/ticketingsystem_tickets_listing.xml](view/adminhtml/ui_component/ticketingsystem_tickets_listing.xml)
 
 
 
