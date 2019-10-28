@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Bdcrops\Note\Api\NoteRepositoryInterface" type="Bdcrops\Note\Model\NoteRepository"/>
+	<preference for="Bdcrops\Note\Api\Data\NoteInterface" type="Bdcrops\Note\Model\Note"/>
+	<preference for="Bdcrops\Note\Api\Data\NoteSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Bdcrops\Note\Model\ResourceModel\Note\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">bdcrops_note_note</argument>
+			<argument name="resourceModel" xsi:type="string">Bdcrops\Note\Model\ResourceModel\Note\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="bdcrops_note_note_grid_data_source" xsi:type="string">Bdcrops\Note\Model\ResourceModel\Note\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>
