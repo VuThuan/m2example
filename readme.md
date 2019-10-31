@@ -10,3 +10,4 @@
 - [Create Custom Product Attribute Programmatically ](ProductAttributes)
 - [To Create Backend Admin Grid ](TicketingSystem)
 - [To Create JavascriptInitTutorial ](JavascriptInitTutorial)
+- [To Create GiftCard Ptoduct Type](GiftCard)
