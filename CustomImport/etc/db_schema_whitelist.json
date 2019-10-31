@@ -1,0 +1,14 @@
+{
+    "bdcrops_custom": {
+        "column": {
+            "id": true,
+            "name": true,
+            "description": true,
+            "created": true,
+            "date_closed": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
