@@ -92,5 +92,15 @@ The next line <attribute code=“” type=“” /> defines our attributes. We g
 
 Next up is our di.xml again, living in etc directory. This is so we can register a plugin to set data to our extension attribute (I’ll cover this more in the next step)
 
+
+- [Block/Features.php]()
+- [Plugin/ProductGet.php]()
+- [Setup/InstallData.php]()
+- [etc/di.xml]()
+- [view/frontend/layout/catalog_product_view.xml]()
+- [view/frontend/template/product_features.phtml]()
+- [view/frontend/web/css/source/_module.less]()
+
+
 ## Ref
 - [ashsmith](https://www.ashsmith.io/magento2/using-extension-attributes-with-products/)
