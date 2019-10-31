@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Bdcrops
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Bdcrops.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.bdcrops.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Bdcrops
+ * @package     Bdcrops_GiftCard
+ * @copyright   Copyright (c) Bdcrops (https://www.bdcrops.com/)
+ * @license     https://www.bdcrops.com/LICENSE.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\Url\SecurityInfo">
+        <arguments>
+            <argument name="secureUrlList" xsi:type="array">
+                <item name="giftcard_dashboard" xsi:type="string">/mpgiftcard/</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Checkout\Block\Cart\Coupon">
+        <plugin name="bdcrops_giftcard_coupon_box" type="Bdcrops\GiftCard\Plugin\Block\CartCoupon"/>
+    </type>
+</config>

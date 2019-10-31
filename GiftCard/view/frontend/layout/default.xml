@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Bdcrops
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Bdcrops.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.bdcrops.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Bdcrops
+ * @package     Bdcrops_Productslider
+ * @copyright   Copyright (c) Bdcrops (https://www.bdcrops.com/)
+ * @license     https://www.bdcrops.com/LICENSE.txt
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Bdcrops_Core::css/owl.carousel.css"/>
+        <css src="Bdcrops_Core::css/owl.theme.css"/>
+    </head>
+</page>

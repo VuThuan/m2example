@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Bdcrops
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Bdcrops.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.bdcrops.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Bdcrops
+ * @package     Bdcrops_GiftCard
+ * @copyright   Copyright (c) Bdcrops (https://www.bdcrops.com/)
+ * @license     https://www.bdcrops.com/LICENSE.txt
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Bdcrops_Core::css/ion.rangeSlider.css"/>
+        <css src="Bdcrops_Core::css/skin/ion.rangeSlider.skinModern.css"/>
+    </head>
+    <body>
+        <referenceBlock name="items_grid">
+            <block class="Bdcrops\GiftCard\Block\Adminhtml\Order\Create\Giftcard" template="Bdcrops_GiftCard::order/create/giftcard.phtml" name="bdcrops_gift_card_apply"/>
+        </referenceBlock>
+    </body>
+</page>

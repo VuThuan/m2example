@@ -1,0 +1,109 @@
+<?php
+/**
+ * Bdcrops
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Bdcrops.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.bdcrops.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Bdcrops
+ * @package     Bdcrops_GiftCard
+ * @copyright   Copyright (c) Bdcrops (https://www.bdcrops.com/)
+ * @license     https://www.bdcrops.com/LICENSE.txt
+ */
+?>
+<script>
+    require([
+        'jquery',
+        "uiRegistry",
+        'Magento_Ui/js/modal/alert',
+        'prototype'
+    ], function (jQuery, registry, alert) {
+
+        jQuery(function () {
+            ignoreValidateAction();
+        });
+
+        function ignoreValidateAction() {
+            var massactionSelect = $('poolCodesGrid_massaction-select');
+            if (massactionSelect) {
+                massactionSelect.addClassName('ignore-validate');
+            }
+        }
+
+        function refreshPoolCodesGrid(grid, gridMassAction, transport) {
+            grid.reload()
+                .done(ignoreValidateAction);
+            gridMassAction.unselectAll();
+        }
+
+        function generatePoolCodes(idPrefix, generateUrl, grid) {
+            var fieldSet = $(idPrefix + 'generate_fieldset'),
+                poolCodesGrid = eval(grid);
+
+            fieldSet.removeClassName('ignore-validate');
+            var validationResult = fieldSet.select('input').collect(function (elm) {
+                return jQuery.validator.validateElement(elm);
+            }).all();
+            fieldSet.addClassName('ignore-validate');
+
+            if (!validationResult) {
+                return;
+            }
+
+            var elements = fieldSet.select('input');
+            elements = elements.concat($$('#pool_id'));
+
+            var params = Form.serializeElements(elements, true);
+            params.form_key = FORM_KEY;
+
+            if ($$('#' + idPrefix + 'generate_fieldset .messages')) {
+                $$('#' + idPrefix + 'generate_fieldset .messages')[0].update();
+            }
+            if ($('messages')) {
+                $('messages').update();
+            }
+
+            new Ajax.Request(generateUrl, {
+                parameters: params,
+                method: 'post',
+                onComplete: function (transport, param) {
+                    var response = false;
+                    if (transport && transport.responseText) {
+                        try {
+                            response = JSON.parse(transport.responseText);
+                        } catch (e) {
+                            console.warn('An error occured while parsing response');
+                        }
+                    }
+                    if (poolCodesGrid) {
+                        poolCodesGrid.reload()
+                            .done(ignoreValidateAction);
+                    }
+                    if (response && response.messages) {
+                        if ($$('#' + idPrefix + 'generate_fieldset .messages')) {
+                            $$('#' + idPrefix + 'generate_fieldset .messages')[0].update(response.messages);
+                        } else if ($('messages')) {
+                            $('messages').update(response.messages);
+                        }
+                    }
+                    if (response && response.error) {
+                        alert({
+                            content: response.error
+                        });
+                    }
+                }
+            });
+        }
+
+        window.generatePoolCodes = generatePoolCodes;
+        window.refreshPoolCodesGrid = refreshPoolCodesGrid;
+    });
+</script>

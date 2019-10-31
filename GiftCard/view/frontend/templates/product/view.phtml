@@ -1,0 +1,59 @@
+<?php
+/**
+ * Bdcrops
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Bdcrops.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.bdcrops.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Bdcrops
+ * @package     Bdcrops_GiftCard
+ * @copyright   Copyright (c) Bdcrops (https://www.bdcrops.com/)
+ * @license     https://www.bdcrops.com/LICENSE.txt
+ */
+
+// @codingStandardsIgnoreFile
+?>
+<?php /* @var \Bdcrops\GiftCard\Block\Product\View $block */ ?>
+
+<div class="giftcard-information-container" id="giftcard-information-container" data-bind="scope:'information'">
+    <div id="giftcard-information-container-loader" data-role="checkout-loader" class="loading-mask" style="position: relative;">
+        <div class="loader">
+            <img src="<?= /** @noEscape */ $block->getViewFileUrl('images/loader-1.gif') ?>"
+                 alt="<?= /** @noEscape */ __('Loading...') ?>" style="position: absolute;">
+        </div>
+    </div>
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "template": {
+                        "component": "Bdcrops_GiftCard/js/view/template"
+                    },
+                    "information": {
+                        "component": "Bdcrops_GiftCard/js/view/information",
+                        "config": {
+                            "deps": {
+                                "name": "template"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+</script>
+<script type="text/javascript">
+    window.giftCardInformation = <?= /** @noEscape */ \Bdcrops\GiftCard\Helper\Data::jsonEncode($block->getProductConfig()) ?>;
+    window.configureData = <?= /** @noEscape */ \Bdcrops\GiftCard\Helper\Data::jsonEncode($block->getConfigureData()) ?>;
+</script>

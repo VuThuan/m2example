@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<referenceBlock name="content">
+    <block template="content.phtml" class="Bdcrops\Contacts\Block\Adminhtml\Bk" name="bdcrops_contacts_block_bk"/>
+    <!-- <uiComponent name="contacts_test_listing" /> -->
+</referenceBlock>
+
+<!-- <referenceContainer name="content">
+    <uiComponent name="contacts_test_listing"/>
+</referenceContainer> -->
+
+</page>

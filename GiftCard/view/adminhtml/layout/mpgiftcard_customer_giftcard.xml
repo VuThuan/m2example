@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Bdcrops
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Bdcrops.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.bdcrops.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Bdcrops
+ * @package     Bdcrops_GiftCard
+ * @copyright   Copyright (c) Bdcrops (https://www.bdcrops.com/)
+ * @license     https://www.bdcrops.com/LICENSE.txt
+ */
+-->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <container name="content" label="Root">
+        <block class="Bdcrops\GiftCard\Block\Adminhtml\Customer\Edit\Tab\Balance" name="bdcrops.giftcard.customer.edit.tab.balance" template="Bdcrops_GiftCard::customer/balance.phtml"/>
+        <block class="Bdcrops\GiftCard\Block\Adminhtml\Customer\Edit\Tab\Transaction" name="bdcrops.giftcard.customer.edit.tab.transaction"/>
+    </container>
+</layout>

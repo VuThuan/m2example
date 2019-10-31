@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+    <add id="Bdcrops_Contacts::bk"
+         resource="Bdcrops_Contacts::bk"
+         title="Bdcrops's Contacts"
+         action="bdcrops_contacts/index/index"
+         module="Bdcrops_Contacts"
+         sortOrder="999"
+         parent="Magento_Backend::content"
+         dependsOnModule="Magento_Backend" />
+
+       </menu>
+</config>
