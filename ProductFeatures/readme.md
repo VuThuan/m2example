@@ -99,7 +99,7 @@ Next up is our di.xml again, living in etc directory. This is so we can register
 - [etc/di.xml]()
 - [view/frontend/layout/catalog_product_view.xml]()
 - [view/frontend/template/product_features.phtml]()
-- [view/frontend/web/css/source/_module.less]()
+- [view/frontend/web/css/source/_ module.less]()
 
 
 ## Ref
