@@ -36,6 +36,9 @@ We need to add a column ― with some regional code of a customer who completed 
 
 ```
 
+- [/etc/adminhtml/di.xml](etc/adminhtml/di.xml)
+- [/view/adminhtml/ui_component/sales_order_grid.xml](view/adminhtml/ui_component/sales_order_grid.xml)
+- [/Plugin/AddDataToOrdersGrid.php](Plugin/AddDataToOrdersGrid.php)
 
 ## Ref
 - [mageworx](https://www.mageworx.com/blog/how-to-add-column-with-filter-to-magento-2-orders-grid/)
