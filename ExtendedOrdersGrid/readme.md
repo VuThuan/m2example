@@ -11,34 +11,37 @@ We need to add a column ― with some regional code of a customer who completed 
 
 ![](docs/attributeSet.png)
 
+
 ## Step By Step Tutorials
 
 - [app/code/Bdcrops/ExtendedOrdersGrid/registration.php](registration.php)
 
     <details><summary>Source</summary>
-    ```
-    <?php
-        \Magento\Framework\Component\ComponentRegistrar::register(
-            \Magento\Framework\Component\ComponentRegistrar::MODULE,
-            'Bdcrops_ExtendedOrdersGrid',
-            __DIR__
-        );
-    ```
+
+      ```
+      <?php
+          \Magento\Framework\Component\ComponentRegistrar::register(
+              \Magento\Framework\Component\ComponentRegistrar::MODULE,
+              'Bdcrops_ExtendedOrdersGrid',
+              __DIR__
+          );
+      ```
     </details>
 
 
-- [app/code/Bdcrops/ExtendedOrdersGrid/etc/module.xml](etc/module.xml)
-```
-<?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="Bdcrops_ExtendedOrdersGrid" setup_version="1.0.0"/>
-</config>
+- [ExtendedOrdersGrid/etc/module.xml](etc/module.xml)
 
-```
+    ```
+    <?xml version="1.0"?>
+    <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+        <module name="Bdcrops_ExtendedOrdersGrid" setup_version="1.0.0"/>
+    </config>
 
-- [/etc/adminhtml/di.xml](etc/adminhtml/di.xml)
-- [/view/adminhtml/ui_component/sales_order_grid.xml](view/adminhtml/ui_component/sales_order_grid.xml)
-- [/Plugin/AddDataToOrdersGrid.php](Plugin/AddDataToOrdersGrid.php)
+    ```
+
+- [etc/adminhtml/di.xml](etc/adminhtml/di.xml)
+- [view/adminhtml/ui_component/sales_order_grid.xml](view/adminhtml/ui_component/sales_order_grid.xml)
+- [Plugin/AddDataToOrdersGrid.php](Plugin/AddDataToOrdersGrid.php)
 
 ## Ref
 - [mageworx](https://www.mageworx.com/blog/how-to-add-column-with-filter-to-magento-2-orders-grid/)
