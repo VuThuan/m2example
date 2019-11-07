@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
+    <default>
+        <payment>
+                <paymentoffline>
+                <active>1</active>
+                <title>PaymentOffline</title>
+                <order_status>pending_payment</order_status>
+                <instructions>Instruction.</instructions>
+                <payment_action>true</payment_action>
+                <model>Bdcrops\PaymentOffline\Model\PaymentOffline</model>
+                <group>offline</group>
+            </paymentoffline>
+            <!-- payment-config -->
+        </payment>
+    </default>
+</config>
