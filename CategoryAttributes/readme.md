@@ -4,7 +4,7 @@
 ## Goal
 - Create New CategoryAttributes Using Setup db script.
 
-![](docs/attributeSet.png)
+![](docs/catAtrribute01.png)
 
 
 ## Step By Step Tutorials
@@ -92,32 +92,32 @@
 
 - Create [view/adminhtml/ui_component/category_form.xml](view/adminhtml/ui_component/category_form.xml)
 
-<details><summary>Source</summary>
+  <details><summary>Source</summary>
 
-    ```
-    <?xml version="1.0" ?>
-    <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
-        <fieldset name="general">
-            <field name="bdc_new_attribute">
-                <argument name="data" xsi:type="array">
-                    <item name="config" xsi:type="array">
-                        <item name="required" xsi:type="boolean">false</item>
-                        <item name="validation" xsi:type="array">
-                            <item name="required-entry" xsi:type="boolean">false</item>
-                        </item>
-                        <item name="sortOrder" xsi:type="number">333</item>
-                        <item name="dataType" xsi:type="string">string</item>
-                        <item name="formElement" xsi:type="string">input</item>
-                        <item name="label" translate="true" xsi:type="string">Bdcrops new attribute</item>
-                    </item>
-                </argument>
-            </field>
-        </fieldset>
-    </form>
+      ```
+      <?xml version="1.0" ?>
+      <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+          <fieldset name="general">
+              <field name="bdc_new_attribute">
+                  <argument name="data" xsi:type="array">
+                      <item name="config" xsi:type="array">
+                          <item name="required" xsi:type="boolean">false</item>
+                          <item name="validation" xsi:type="array">
+                              <item name="required-entry" xsi:type="boolean">false</item>
+                          </item>
+                          <item name="sortOrder" xsi:type="number">333</item>
+                          <item name="dataType" xsi:type="string">string</item>
+                          <item name="formElement" xsi:type="string">input</item>
+                          <item name="label" translate="true" xsi:type="string">Bdcrops new attribute</item>
+                      </item>
+                  </argument>
+              </field>
+          </fieldset>
+      </form>
 
 
-    ```
-</details>
+      ```
+  </details>
 
 
 ## Ref
