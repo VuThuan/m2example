@@ -37,6 +37,25 @@
       ```
   </details>
 
+- OrderNotes/Controller/Index.php
+- OrderNotes/Controller/Index/Process.php
+- OrderNotes/Model/ConfigProvider.php
+- OrderNotes/Observer/SaveOrderNotesToOrder.php
+- OrderNotes/Setup/InstallSchema.php
+- OrderNotes/docs/OrderNotesCheckout.png
+- OrderNotes/docs/OrderNotesOrderComent.png
+- OrderNotes/docs/OrderNotesOrderDetails.png
+- OrderNotes/etc/frontend/di.xml
+- OrderNotes/etc/frontend/routes.xml
+- OrderNotes/etc/module.xml
+- OrderNotes/etc/webapi_rest/events.xml
+- OrderNotes/readme.md
+- OrderNotes/registration.php
+- OrderNotes/view/frontend/layout/checkout_index_index.xml
+- OrderNotes/view/frontend/web/js/view/order-notes.js
+- OrderNotes/view/frontend/web/template/order/notes.html
 
 
-## Ref 
+
+
+## Ref

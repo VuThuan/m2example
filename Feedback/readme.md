@@ -37,52 +37,25 @@
       ```
   </details>
 
-- Create [app/code/Bdcrops/Feedback/Setup/InstallData.php](Setup/InstallData.php)
+- Feedback/Block/Customer/Feedback.php
+- Feedback/Controller/Customer/Index.php
+- Feedback/Controller/Customer/SubmitReview.php
+- Feedback/Model/Feedback.php
+- Feedback/Model/ResourceModel/Feedback.php
+- Feedback/Model/ResourceModel/Feedback/Collection.php
+- Feedback/Setup/InstallSchema.php
+- Feedback/etc/di.xml
+- Feedback/etc/frontend/routes.xml
+- Feedback/etc/module.xml
+- Feedback/readme.md
+- Feedback/registration.php
+- Feedback/view/frontend/layout/customer_account.xml
+- Feedback/view/frontend/layout/customer_feedback_customer_index.xml
+- Feedback/view/frontend/templates/customer_feedback.phtml
+- Feedback/view/frontend/web/css/customer-feedback.css
+- Feedback/view/frontend/web/js/view/customer-feedback.js
+- Feedback/view/frontend/web/template/customer-feedback.html
 
-  <details><summary>Source</summary>
-
-      ```
-      <?php
-      namespace Bdcrops\Feedback\Setup;
-
-      use Magento\Framework\Setup\InstallDataInterface;
-      use Magento\Framework\Setup\ModuleContextInterface;
-      use Magento\Framework\Setup\ModuleDataSetupInterface;
-      use Magento\Eav\Model\Entity\Attribute\SetFactory as AttributeSetFactory;
-      use Magento\Catalog\Setup\CategorySetupFactory;
-
-      class InstallData implements InstallDataInterface {
-        private $attributeSetFactory;
-        private $categorySetupFactory;
-        public function __construct(
-            AttributeSetFactory $attributeSetFactory,
-            CategorySetupFactory $categorySetupFactory) {
-            $this->attributeSetFactory = $attributeSetFactory;
-            $this->categorySetupFactory = $categorySetupFactory;
-        }
-
-        public function install(
-            ModuleDataSetupInterface $setup,
-            ModuleContextInterface $context ) {
-            $setup->startSetup();
-            $categorySetup = $this->categorySetupFactory->create(['setup' => $setup]);
-            $attributeSet = $this->attributeSetFactory->create();
-            $entityTypeId = $categorySetup->getEntityTypeId(\Magento\Catalog\Model\Product::ENTITY);
-            $attributeSetId = $categorySetup->getDefaultAttributeSetId($entityTypeId);
-            $data = [
-                'attribute_set_name' => 'Bdcrops',
-                'entity_type_id' => $entityTypeId,
-                'sort_order' => 100,
-            ];
-            $attributeSet->setData($data);
-            $attributeSet->validate();
-            $attributeSet->save();
-            $attributeSet->initFromSkeleton($attributeSetId)->save();
-        }
-      }
-
-      ```
-  </details>
 
 ## Ref
 - [blogtreat](http://www.blogtreat.com/create-an-attribute-set-in-magento-2-via-installable-script/)

@@ -37,52 +37,34 @@
       ```
   </details>
 
-- Create [app/code/Bdcrops/Minventory/Setup/InstallData.php](Setup/InstallData.php)
+- Minventory/Block/Adminhtml/Product/Edit/Button/Back.php
+- Minventory/Block/Adminhtml/Product/Edit/Button/Save.php
+- Minventory/Controller/Adminhtml/Product.php
+- Minventory/Controller/Adminhtml/Product/Index.php
+- Minventory/Controller/Adminhtml/Product/MassResupply.php
+- Minventory/Controller/Adminhtml/Product/Resupply.php
+- Minventory/Model/Resupply.php
+- Minventory/Ui/Component/Listing/Columns/Resupply.php
+- Minventory/Ui/DataProvider/Product/Form/ProductDataProvider.php
+- Minventory/Ui/DataProvider/Product/ProductDataProvider.php
+- Minventory/docs/UiComponent.png
+- Minventory/docs/aclMenu.png
+- Minventory/docs/massResuply.png
+- Minventory/docs/menuDash.png
+- Minventory/docs/minventoryList.png
+- Minventory/docs/resupplyStock.png
+- Minventory/docs/resupplyaddAfter.png
+- Minventory/etc/acl.xml
+- Minventory/etc/adminhtml/menu.xml
+- Minventory/etc/adminhtml/routes.xml
+- Minventory/etc/module.xml
+- Minventory/readme.md
+- Minventory/registration.php
+- Minventory/view/adminhtml/layout/minventory_product_index.xml
+- Minventory/view/adminhtml/layout/minventory_product_resupply.xml
+- Minventory/view/adminhtml/ui_component/minventory_listing.xml
+- Minventory/view/adminhtml/ui_component/minventory_resupply_form.xml
 
-  <details><summary>Source</summary>
-
-      ```
-      <?php
-      namespace Bdcrops\Minventory\Setup;
-
-      use Magento\Framework\Setup\InstallDataInterface;
-      use Magento\Framework\Setup\ModuleContextInterface;
-      use Magento\Framework\Setup\ModuleDataSetupInterface;
-      use Magento\Eav\Model\Entity\Attribute\SetFactory as AttributeSetFactory;
-      use Magento\Catalog\Setup\CategorySetupFactory;
-
-      class InstallData implements InstallDataInterface {
-        private $attributeSetFactory;
-        private $categorySetupFactory;
-        public function __construct(
-            AttributeSetFactory $attributeSetFactory,
-            CategorySetupFactory $categorySetupFactory) {
-            $this->attributeSetFactory = $attributeSetFactory;
-            $this->categorySetupFactory = $categorySetupFactory;
-        }
-
-        public function install(
-            ModuleDataSetupInterface $setup,
-            ModuleContextInterface $context ) {
-            $setup->startSetup();
-            $categorySetup = $this->categorySetupFactory->create(['setup' => $setup]);
-            $attributeSet = $this->attributeSetFactory->create();
-            $entityTypeId = $categorySetup->getEntityTypeId(\Magento\Catalog\Model\Product::ENTITY);
-            $attributeSetId = $categorySetup->getDefaultAttributeSetId($entityTypeId);
-            $data = [
-                'attribute_set_name' => 'Bdcrops',
-                'entity_type_id' => $entityTypeId,
-                'sort_order' => 100,
-            ];
-            $attributeSet->setData($data);
-            $attributeSet->validate();
-            $attributeSet->save();
-            $attributeSet->initFromSkeleton($attributeSetId)->save();
-        }
-      }
-
-      ```
-  </details>
 
 ## Ref
 - [blogtreat](http://www.blogtreat.com/create-an-attribute-set-in-magento-2-via-installable-script/)
