@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<carriers>
+			<banglacourier>
+				<active>1</active>
+				<title>Bangla Courier Shipping</title>
+				<sallowspecific>0</sallowspecific>
+				<showmethod>0</showmethod>
+				<specificerrmsg><![CDATA[The Bangla Courier shipping method is not available. To use this shipping method, please contact us.]]></specificerrmsg>
+				<sort_order>10</sort_order>
+				<model>Bdcrops\BanglaCourier\Model\Carrier\BanglaCourier</model>
+
+				<!-- The "Untracked Bangla Mail" specific options -->
+				<banglacourierstandard>
+					<title><![CDATA[BanglaCourier Standard]]></title>
+					<shippingcost>4.99</shippingcost>
+				</banglacourierstandard>
+
+				<!-- The "Parcel Force 48hr" specific options -->
+				<banglacourier48hr>
+					<title><![CDATA[BanglaCourier 48h]]></title>
+					<shippingcost>9.99</shippingcost>
+				</banglacourier48hr>
+
+			</banglacourier>
+		</carriers>
+	</default>
+</config>

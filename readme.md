@@ -4,6 +4,7 @@
 - [Create New AttributesSet Programmatically ](AttributesSet)
 - [Create Catalog Price Rule in REST API ](CatalogRuleApi)
 - [Create New Catalog Widget Programmatically ](CatalogWidget)
+- [Create Category Attributes](CategoryAttributes)
 - [Create New Customer Attribute Programmatically ](CustomerAttribute)
 - [Extended Orders Grid UI & Plugin ](ExtendedOrdersGrid)
 - [Create New Product Type Programmatically ](NewproductType)
