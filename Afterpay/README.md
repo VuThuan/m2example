@@ -106,4 +106,4 @@ Afterpay Payment Method for Magento 2
 
 ### ref
 
-https://blog.scandiweb.com/article/magento-2-custom-payment-gateway-afterpay-h84hrhhoxna
+- [blog.scandiweb](https://blog.scandiweb.com/article/magento-2-custom-payment-gateway-afterpay-h84hrhhoxna)
