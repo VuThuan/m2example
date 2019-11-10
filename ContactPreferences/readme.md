@@ -41,11 +41,11 @@
       ```
   </details>
 
-- create app/code/BDC/ContactPreferences/Setup/InstallData.php  
+- create app/code/Bdcrops/ContactPreferences/Setup/InstallData.php  
 ```
 <?php
 
-namespace BDC\ContactPreferences\Setup;
+namespace Bdcrops\ContactPreferences\Setup;
 
 class InstallData implements \Magento\Framework\Setup\InstallDataInterface {
     protected $customerSetupFactory;
@@ -66,7 +66,7 @@ class InstallData implements \Magento\Framework\Setup\InstallDataInterface {
                 'type' => 'varchar',
                 'label' => 'Contact Preferences',
                 'input' => 'multiselect',
-                'source' => \BDC\ContactPreferences\Model\Entity\Attribute\Source\Contact\Preferences::class,
+                'source' => \Bdcrops\ContactPreferences\Model\Entity\Attribute\Source\Contact\Preferences::class,
                 'required' => 0,
                 'sort_order' => 99,
                 'position' => 99,
@@ -96,23 +96,23 @@ class InstallData implements \Magento\Framework\Setup\InstallDataInterface {
 }
 
 ```
-- create app/code/BDC/ContactPreferences/etc/frontend/routes.xml
+- create app/code/Bdcrops/ContactPreferences/etc/frontend/routes.xml
 ```
 <?xml version="1.0"?>
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
     <router id="standard">
         <route id="customer" frontName="customer">
-            <module name="BDC_ContactPreferences" before="Magento_Customer"/>
+            <module name="Bdcrops_ContactPreferences" before="Magento_Customer"/>
         </route>
     </router>
 </config>
 ```
-- create app/code/BDC/ContactPreferences/Controller/Contact/Preferences.php
+- create app/code/Bdcrops/ContactPreferences/Controller/Contact/Preferences.php
 ```
 <?php
 
-namespace BDC\ContactPreferences\Controller\Contact;
+namespace Bdcrops\ContactPreferences\Controller\Contact;
 
 use Magento\Framework\App\Action\Context;
 use phpDocumentor\Reflection\Types\Boolean;
@@ -167,11 +167,11 @@ class Preferences extends \Magento\Customer\Controller\AbstractAccount {
 }
 
 ```
-- create app/code/BDC/ContactPreferences/Model/Entity/Attribute/Source/Contact/Preferences.php
+- create app/code/Bdcrops/ContactPreferences/Model/Entity/Attribute/Source/Contact/Preferences.php
 ```
 <?php
 
-namespace BDC\ContactPreferences\Model\Entity\Attribute\Source\Contact;
+namespace Bdcrops\ContactPreferences\Model\Entity\Attribute\Source\Contact;
 
 class Preferences extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractSource {
     const VALUE_EMAIL = 'email';
@@ -192,7 +192,7 @@ class Preferences extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractSou
 }
 ```
 
-- create app/code/BDC/ContactPreferences/etc/frontend/di.xml
+- create app/code/Bdcrops/ContactPreferences/etc/frontend/di.xml
 ```
 <?xml version="1.0"?>
 
@@ -200,18 +200,18 @@ class Preferences extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractSou
     <type name="Magento\Customer\CustomerData\SectionPoolInterface">
         <arguments>
             <argument name="sectionSourceMap" xsi:type="array">
-                <item name="contact_preferences" xsi:type="string">BDC\ContactPreferences\CustomerData\Preferences</item>
+                <item name="contact_preferences" xsi:type="string">Bdcrops\ContactPreferences\CustomerData\Preferences</item>
             </argument>
         </arguments>
     </type>
 </config>
 
 ```
-- create app/code/BDC/ContactPreferences/CustomerData/Preferences.php
+- create app/code/Bdcrops/ContactPreferences/CustomerData/Preferences.php
 ```
 <?php
 
-namespace BDC\ContactPreferences\CustomerData;
+namespace Bdcrops\ContactPreferences\CustomerData;
 
 class Preferences extends \Magento\Framework\DataObject implements \Magento\Customer\CustomerData\SectionSourceInterface
 {
@@ -219,7 +219,7 @@ class Preferences extends \Magento\Framework\DataObject implements \Magento\Cust
     protected $customerSession;
 
     public function __construct(
-        \BDC\ContactPreferences\Model\Entity\Attribute\Source\Contact\Preferences $preferences,
+        \Bdcrops\ContactPreferences\Model\Entity\Attribute\Source\Contact\Preferences $preferences,
         \Magento\Customer\Model\Session $customerSession,
         array $data = [] ) {
         $this->preferences = $preferences;
@@ -250,7 +250,7 @@ class Preferences extends \Magento\Framework\DataObject implements \Magento\Cust
 }
 
 ```
-- create app/code/BDC/ContactPreferences/etc/frontend/sections.xml
+- create app/code/Bdcrops/ContactPreferences/etc/frontend/sections.xml
 ```
 <?xml version="1.0"?>
 
@@ -263,7 +263,7 @@ class Preferences extends \Magento\Framework\DataObject implements \Magento\Cust
 ```
 
 
-- create app/code/BDC/ContactPreferences/view/frontend/layout/checkout_index_index.xml
+- create app/code/Bdcrops/ContactPreferences/view/frontend/layout/checkout_index_index.xml
 ```
 <?xml version="1.0"?>
 
@@ -285,7 +285,7 @@ class Preferences extends \Magento\Framework\DataObject implements \Magento\Cust
                                                         <item name="afterMethods" xsi:type="array">
                                                             <item name="children" xsi:type="array">
                                                                 <item name="contact-preferences" xsi:type="array">
-                                                                    <item name="component" xsi:type="string">BDC_ContactPreferences/js/view/contact-preferences</item>
+                                                                    <item name="component" xsi:type="string">Bdcrops_ContactPreferences/js/view/contact-preferences</item>
                                                                 </item>
                                                             </item>
                                                         </item>
@@ -307,7 +307,7 @@ class Preferences extends \Magento\Framework\DataObject implements \Magento\Cust
 ```
 ![](docs/checkout.png)
 
-- create app/code/BDC/ContactPreferences/view/frontend/layout/customer_account.xml
+- create app/code/Bdcrops/ContactPreferences/view/frontend/layout/customer_account.xml
 ```
 <?xml version="1.0"?>
 
@@ -327,7 +327,7 @@ class Preferences extends \Magento\Framework\DataObject implements \Magento\Cust
 
 ```
 ![](docs/ContactPrefCuAcc.png)
-- create app/code/BDC/ContactPreferences/view/frontend/layout/customer_contact_preferences.xml
+- create app/code/Bdcrops/ContactPreferences/view/frontend/layout/customer_contact_preferences.xml
 ```
 <?xml version="1.0"?>
 
@@ -336,13 +336,13 @@ class Preferences extends \Magento\Framework\DataObject implements \Magento\Cust
     <body>
         <referenceContainer name="content">
             <block name="contact_preferences"
-                   template="BDC_ContactPreferences::customer/contact/preferences.phtml" cacheable="false"/>
+                   template="Bdcrops_ContactPreferences::customer/contact/preferences.phtml" cacheable="false"/>
         </referenceContainer>
     </body>
 </page>
 
 ```
-- create app/code/BDC/ContactPreferences/view/frontend/templates/customer/contact/preferences.phtml
+- create app/code/Bdcrops/ContactPreferences/view/frontend/templates/customer/contact/preferences.phtml
 ```
 <div class="contact-preferences" data-bind="scope:'contact-preferences-scope'">
     <!-- ko template: getTemplate() --><!-- /ko -->
@@ -363,18 +363,18 @@ class Preferences extends \Magento\Framework\DataObject implements \Magento\Cust
 </script>
 
 ```
-- create app/code/BDC/ContactPreferences/view/frontend/requirejs-config.js
+- create app/code/Bdcrops/ContactPreferences/view/frontend/requirejs-config.js
 ```
 var config = {
     map: {
         '*': {
-            contactPreferences: 'BDC_ContactPreferences/js/view/contact-preferences'
+            contactPreferences: 'Bdcrops_ContactPreferences/js/view/contact-preferences'
         }
     }
 };
 
  ```
-- create app/code/BDC/ContactPreferences/view/frontend/web/js/view/contact-preferences.js
+- create app/code/Bdcrops/ContactPreferences/view/frontend/web/js/view/contact-preferences.js
 ```
 define([
     'uiComponent',
@@ -389,7 +389,7 @@ define([
 
     return Component.extend({
         defaults: {
-            template: 'BDC_ContactPreferences/contact-preferences'
+            template: 'Bdcrops_ContactPreferences/contact-preferences'
         },
 
         initialize: function () {
@@ -435,7 +435,7 @@ define([
 });
 
 ```
-- create app/code/BDC/ContactPreferences/view/frontend/web/template/contact-preferences.html
+- create app/code/Bdcrops/ContactPreferences/view/frontend/web/template/contact-preferences.html
 ```
 <div class="contact-preferences-component" data-bind="if: isCustomerLoggedIn()">
     <div class="step-title iweb-contact-preferences-title" data-role="title" data-bind="i18n: 'Contact Preferences'"></div>
