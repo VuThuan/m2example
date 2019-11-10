@@ -8,20 +8,22 @@
 
 ## Step By Step Tutorials
 
-- [app/code/Bdcrops/GiftCard/registration.php]()](registration.php]())
+- [app/code/Bdcrops/GiftCard/registration.php](registration.php)
 
-    <details><summary>Source</summary>
-    ```
-    <?php
-    use Magento\Framework\Component\ComponentRegistrar;
-    ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Bdcrops_GiftCard',
-        __DIR__
-    );
-    ```
-    </details>
+  <details><summary>Source</summary>
+
+      ```
+      <?php
+      use Magento\Framework\Component\ComponentRegistrar;
+      ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Bdcrops_GiftCard',
+          __DIR__
+      );
+      ```
+  </details>
 
 
 - [GiftCard/etc/module.xml](etc/module.xml)
+
     ```
     <?xml version="1.0"?>
     <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
@@ -52,12 +54,19 @@
     ```
 
 - [GiftCard/etc/acl.xml](etc/acl.xml)
+
 - [GiftCard/etc/adminhtml/di.xml](etc/adminhtml/di.xml)
+
 - [GiftCard/etc/adminhtml/events.xml](etc/adminhtml/events.xml)
+
 - [GiftCard/etc/adminhtml/menu.xml](etc/adminhtml/menu.xml)
+
 - [GiftCard/etc/adminhtml/routes.xml](etc/adminhtml/routes.xml)
+
 - [GiftCard/etc/adminhtml/system.xml](etc/adminhtml/system.xml)
+
 - [GiftCard/etc/catalog_attributes.xml](etc/catalog_attributes.xml)
+
 - [GiftCard/etc/config.xml](etc/config.xml)
 - [GiftCard/etc/crontab.xml](etc/crontab.xml)
 - [GiftCard/etc/di.xml](etc/di.xml)

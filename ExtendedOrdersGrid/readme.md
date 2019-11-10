@@ -147,10 +147,8 @@ We need to add a column ― with some regional code of a customer who completed 
 
               return $collection;
           }
-    }
-
-
-    ```
+        }
+     ```
   </details>
 
 ## Ref
