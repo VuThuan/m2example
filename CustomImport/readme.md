@@ -54,7 +54,7 @@
       ```
   </details>
 
-- Run 
+- Run
 ```
 php bin/magento setup:db-declaration:generate-whitelist [options]
 php bin/magento setup:db-declaration:generate-whitelist --module-name=vendor_module
@@ -64,6 +64,10 @@ php bin/magento setup:upgrade --dry-run=1 --keep-generated
 php bin/magento setup:upgrade
 
 ```
+
+![](docs/customImport.jpg)
+[csv](docs/bdcrops_custom.csv)
+
 
 ## Ref
 - [meetanshi](https://www.scommerce-mage.com/blog/magento-2-how-to-import-csv-to-custom-table.html)
