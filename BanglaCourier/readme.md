@@ -38,6 +38,128 @@
 
       ```
   </details>
+- [etc/config.xml](etc/config.xml)
+
+      <details><summary>Source</summary>
+
+        ```
+        <?xml version="1.0" ?>
+        <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+        	<default>
+        		<carriers>
+        			<banglacourier>
+        				<active>1</active>
+        				<title>Bangla Courier Shipping</title>
+        				<sallowspecific>0</sallowspecific>
+        				<showmethod>0</showmethod>
+        				<specificerrmsg><![CDATA[The Bangla Courier shipping method is not available. To use this shipping method, please contact us.]]></specificerrmsg>
+        				<sort_order>10</sort_order>
+        				<model>Bdcrops\BanglaCourier\Model\Carrier\BanglaCourier</model>
+
+        				<!-- The "Untracked Bangla Mail" specific options -->
+        				<banglacourierstandard>
+        					<title><![CDATA[BanglaCourier Standard]]></title>
+        					<shippingcost>4.99</shippingcost>
+        				</banglacourierstandard>
+
+        				<!-- The "Parcel Force 48hr" specific options -->
+        				<banglacourier48hr>
+        					<title><![CDATA[BanglaCourier 48h]]></title>
+        					<shippingcost>9.99</shippingcost>
+        				</banglacourier48hr>
+
+        			</banglacourier>
+        		</carriers>
+        	</default>
+        </config>
+
+        ```
+      </details>  
+- [etc/adminhtml/system.xml](etc/adminhtml/system.xml)
+      <details><summary>Source</summary>
+
+        ```
+        <?xml version="1.0" ?>
+        <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+        	<system>
+        		<section id="carriers">
+        			<group id="banglacourier" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="1" translate="label">
+        				<label>Bangla Courier Shipping</label>
+        				<!-- General shipping carrier options -->
+        				<field id="active" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+        					<label>Enabled</label>
+        					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        				</field>
+
+        				<field id="title" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label" type="text">
+        					<label>Title</label>
+        				</field>
+
+        				<field id="sallowspecific" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="30" translate="label" type="select">
+        					<label>Ship to Applicable Countries</label>
+        					<frontend_class>shipping-applicable-country</frontend_class>
+        					<source_model>Magento\Shipping\Model\Config\Source\Allspecificcountries</source_model>
+        				</field>
+
+        				<field id="specificcountry" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="40" translate="label" type="multiselect">
+        					<label>Ship to Specific Countries</label>
+        					<can_be_empty>1</can_be_empty>
+        					<source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+        				</field>
+
+        				<field id="showmethod" translate="label" type="select" sortOrder="41" showInDefault="1" showInWebsite="1" showInStore="0">
+        					<label>Show Method if Not Applicable</label>
+        					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        					<frontend_class>shipping-skip-hide</frontend_class>
+        				</field>
+
+        				<field id="specificerrmsg" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="50" translate="label" type="textarea">
+        					<label>Displayed Error Message</label>
+        				</field>
+
+        				<field id="sort_order" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="51" translate="label" type="text">
+        					<label>Sort Order</label>
+        					<validate>validate-number validate-zero-or-greater</validate>
+        				</field>
+
+        				<!-- The "BanglaCourier Standard" specific options -->
+        				<group id="banglacourierstandard" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="110" translate="label">
+        					<label><![CDATA[The "BanglaCourier Standard" shipping method]]></label>
+        					<fieldset_css>complex</fieldset_css>
+        					<field id="title" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+        						<label><![CDATA[Title]]></label>
+        					</field>
+
+        					<field id="shippingcost" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+        						<label><![CDATA[Shipping Cost]]></label>
+        						<validate>validate-number validate-zero-or-greater</validate>
+        					</field>
+        				</group>
+
+                        <!-- The  "BanglaCourier 48h" specific options -->
+        				<group id="banglacourier48hr" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="120" translate="label">
+        					<label><![CDATA[The "BanglaCourier 48h" shipping method]]></label>
+        					<fieldset_css>complex</fieldset_css>
+        					<field id="title" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+        						<label><![CDATA[Title]]></label>
+        					</field>
+
+        					<field id="shippingcost" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+        						<label><![CDATA[Shipping Cost]]></label>
+        						<validate>validate-number validate-zero-or-greater</validate>
+        					</field>
+        				</group>
+
+        			</group>
+        		</section>
+        	</system>
+        </config>
+
+        ```
+      </details>
+
+
+
 
 - [Model/Carrier/BanglaCourier.php](Model/Carrier/BanglaCourier.php)
     <details><summary>Source</summary>
@@ -172,127 +294,6 @@
 
 
 
-- [etc/adminhtml/system.xml](etc/adminhtml/system.xml)
-    <details><summary>Source</summary>
-
-      ```
-      <?xml version="1.0" ?>
-      <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
-      	<system>
-      		<section id="carriers">
-      			<group id="banglacourier" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="1" translate="label">
-      				<label>Bangla Courier Shipping</label>
-      				<!-- General shipping carrier options -->
-      				<field id="active" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
-      					<label>Enabled</label>
-      					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-      				</field>
-
-      				<field id="title" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label" type="text">
-      					<label>Title</label>
-      				</field>
-
-      				<field id="sallowspecific" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="30" translate="label" type="select">
-      					<label>Ship to Applicable Countries</label>
-      					<frontend_class>shipping-applicable-country</frontend_class>
-      					<source_model>Magento\Shipping\Model\Config\Source\Allspecificcountries</source_model>
-      				</field>
-
-      				<field id="specificcountry" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="40" translate="label" type="multiselect">
-      					<label>Ship to Specific Countries</label>
-      					<can_be_empty>1</can_be_empty>
-      					<source_model>Magento\Directory\Model\Config\Source\Country</source_model>
-      				</field>
-
-      				<field id="showmethod" translate="label" type="select" sortOrder="41" showInDefault="1" showInWebsite="1" showInStore="0">
-      					<label>Show Method if Not Applicable</label>
-      					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-      					<frontend_class>shipping-skip-hide</frontend_class>
-      				</field>
-
-      				<field id="specificerrmsg" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="50" translate="label" type="textarea">
-      					<label>Displayed Error Message</label>
-      				</field>
-
-      				<field id="sort_order" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="51" translate="label" type="text">
-      					<label>Sort Order</label>
-      					<validate>validate-number validate-zero-or-greater</validate>
-      				</field>
-
-      				<!-- The "BanglaCourier Standard" specific options -->
-      				<group id="banglacourierstandard" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="110" translate="label">
-      					<label><![CDATA[The "BanglaCourier Standard" shipping method]]></label>
-      					<fieldset_css>complex</fieldset_css>
-      					<field id="title" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-      						<label><![CDATA[Title]]></label>
-      					</field>
-
-      					<field id="shippingcost" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
-      						<label><![CDATA[Shipping Cost]]></label>
-      						<validate>validate-number validate-zero-or-greater</validate>
-      					</field>
-      				</group>
-
-                      <!-- The  "BanglaCourier 48h" specific options -->
-      				<group id="banglacourier48hr" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="120" translate="label">
-      					<label><![CDATA[The "BanglaCourier 48h" shipping method]]></label>
-      					<fieldset_css>complex</fieldset_css>
-      					<field id="title" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-      						<label><![CDATA[Title]]></label>
-      					</field>
-
-      					<field id="shippingcost" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
-      						<label><![CDATA[Shipping Cost]]></label>
-      						<validate>validate-number validate-zero-or-greater</validate>
-      					</field>
-      				</group>
-
-      			</group>
-      		</section>
-      	</system>
-      </config>
-
-      ```
-    </details>
-
-
-- [etc/config.xml](etc/config.xml)
-
-  <details><summary>Source</summary>
-
-    ```
-    <?xml version="1.0" ?>
-    <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
-    	<default>
-    		<carriers>
-    			<banglacourier>
-    				<active>1</active>
-    				<title>Bangla Courier Shipping</title>
-    				<sallowspecific>0</sallowspecific>
-    				<showmethod>0</showmethod>
-    				<specificerrmsg><![CDATA[The Bangla Courier shipping method is not available. To use this shipping method, please contact us.]]></specificerrmsg>
-    				<sort_order>10</sort_order>
-    				<model>Bdcrops\BanglaCourier\Model\Carrier\BanglaCourier</model>
-
-    				<!-- The "Untracked Bangla Mail" specific options -->
-    				<banglacourierstandard>
-    					<title><![CDATA[BanglaCourier Standard]]></title>
-    					<shippingcost>4.99</shippingcost>
-    				</banglacourierstandard>
-
-    				<!-- The "Parcel Force 48hr" specific options -->
-    				<banglacourier48hr>
-    					<title><![CDATA[BanglaCourier 48h]]></title>
-    					<shippingcost>9.99</shippingcost>
-    				</banglacourier48hr>
-
-    			</banglacourier>
-    		</carriers>
-    	</default>
-    </config>
-
-    ```
-  </details>
 
 
 ## Ref
