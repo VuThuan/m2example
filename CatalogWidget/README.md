@@ -170,3 +170,4 @@ class SortOrder implements \Magento\Framework\Option\ArrayInterface
 ## Ref
 
 https://inchoo.net/magento-2/magento-2-custom-widget/
+https://www.mageplaza.com/devdocs/magento-2-create-widget/

@@ -4,7 +4,11 @@
 ## Goal
 - Create New ContactPreferences Using Setup db script.
 
-![](docs/attributeSet.png)
+![](docs/ContactPrefAdmin.png)
+![](docs/ContactPrefCuAcc.png)
+![](docs/checkout.png)
+![](docs/db.png)
+
 
 
 ## Step By Step Tutorials
@@ -41,10 +45,7 @@
   - ContactPreferences/CustomerData/Preferences.php
   - ContactPreferences/Model/Entity/Attribute/Source/Contact/Preferences.php
   - ContactPreferences/Setup/InstallData.php
-  - ContactPreferences/docs/ContactPrefAdmin.png
-  - ContactPreferences/docs/ContactPrefCuAcc.png
-  - ContactPreferences/docs/checkout.png
-  - ContactPreferences/docs/db.png
+
   - ContactPreferences/etc/frontend/di.xml
   - ContactPreferences/etc/frontend/routes.xml
   - ContactPreferences/etc/frontend/sections.xml
