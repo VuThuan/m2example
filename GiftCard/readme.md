@@ -24,6 +24,7 @@
 
 - [GiftCard/etc/module.xml](etc/module.xml)
   <details><summary>Source</summary>
+
       ```
       <?xml version="1.0"?>
       <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
@@ -39,9 +40,10 @@
       </config>
       ```
   </details>
-  
+
 - [GiftCard/etc/product_types.xml](etc/product_types.xml)
   <details><summary>Source</summary>
+  
     ```
     <?xml version="1.0"?>
     <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Catalog:etc/product_types.xsd">
