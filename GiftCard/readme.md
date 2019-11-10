@@ -23,21 +23,23 @@
 
 
 - [GiftCard/etc/module.xml](etc/module.xml)
-
-    ```
-    <?xml version="1.0"?>
-    <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-        <module name="Bdcrops_GiftCard" setup_version="1.0.0">
-            <sequence>
-                <module name="Magento_Backend"/>
-                <module name="Magento_Catalog"/>
-                <module name="Magento_Checkout"/>
-                <module name="Magento_Quote"/>
-                <module name="Bdcrops_Core"/>
-            </sequence>
-        </module>
-    </config>
-    ```
+  <details><summary>Source</summary>
+      ```
+      <?xml version="1.0"?>
+      <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+          <module name="Bdcrops_GiftCard" setup_version="1.0.0">
+              <sequence>
+                  <module name="Magento_Backend"/>
+                  <module name="Magento_Catalog"/>
+                  <module name="Magento_Checkout"/>
+                  <module name="Magento_Quote"/>
+                  <module name="Bdcrops_Core"/>
+              </sequence>
+          </module>
+      </config>
+      ```
+  </details>
+  
 - [GiftCard/etc/product_types.xml](etc/product_types.xml)
   <details><summary>Source</summary>
     ```
