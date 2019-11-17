@@ -44,11 +44,24 @@
 php bin/magento setup:db-declaration:generate-whitelist [options]
 php bin/magento setup:db-declaration:generate-whitelist --module-name=vendor_module
 
-php bin/magento setup:db-declaration:generate-whitelist --module-name=Bdcrops_GraphQLStorePickup
+php bin/magento setup:db-declaration:generate-whitelist --module-name=LarsRoettig_GraphQLStorePickup
 php bin/magento setup:upgrade --dry-run=1 --keep-generated
 php bin/magento setup:upgrade
 
 ```
+
+- [Api/Data/StoreInterface.php](Api/Data/StoreInterface.php)
+- [Api/StoreRepositoryInterface.php](Api/StoreRepositoryInterface.php)
+- [Model/Resolver/FilterArgument.php](Model/Resolver/FilterArgument.php)
+- [Model/Resolver/PickUpStores.php](Model/Resolver/PickUpStores.php)
+- [Model/ResourceModel/Store.php](Model/ResourceModel/Store.php)
+- [Model/ResourceModel/StoreCollection.php](Model/ResourceModel/StoreCollection.php)
+- [Model/Store.php](Model/Store.php)
+- [Model/StoreRepository.php](Model/StoreRepository.php)
+- [Setup/Patch/Data/InitializePickUpStores.php](Setup/Patch/Data/InitializePickUpStores.php)
+- [etc/db_schema.xml](etc/db_schema.xml)
+- [etc/db_schema_whitelist.json
+- [etc/di.xml](etc/di.xml) 
 
 
 ## Ref
