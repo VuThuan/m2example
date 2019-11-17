@@ -4,7 +4,7 @@
 ## Goal
 - Create New GraphQLStorePickup Using Setup db script.
 
-![](docs/attributeSet.png)
+![](docs/graphqlPostman.png)
 
 
 ## Step By Step Tutorials
@@ -44,7 +44,7 @@
 php bin/magento setup:db-declaration:generate-whitelist [options]
 php bin/magento setup:db-declaration:generate-whitelist --module-name=vendor_module
 
-php bin/magento setup:db-declaration:generate-whitelist --module-name=LarsRoettig_GraphQLStorePickup
+php bin/magento setup:db-declaration:generate-whitelist --module-name=Bdcrops_GraphQLStorePickup
 php bin/magento setup:upgrade --dry-run=1 --keep-generated
 php bin/magento setup:upgrade
 
@@ -61,7 +61,7 @@ php bin/magento setup:upgrade
 - [Setup/Patch/Data/InitializePickUpStores.php](Setup/Patch/Data/InitializePickUpStores.php)
 - [etc/db_schema.xml](etc/db_schema.xml)
 - [etc/db_schema_whitelist.json
-- [etc/di.xml](etc/di.xml) 
+- [etc/di.xml](etc/di.xml)
 
 
 ## Ref
