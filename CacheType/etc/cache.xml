@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Cache/etc/cache.xsd">
-    <type name="bdcrops_cache" translate="label,description" instance="Bdcrops\CacheType\Model\Cache\BdcropsropsCache">
+    <!-- <type name="bdcrops_cache" translate="label,description" instance="Bdcrops\CacheType\Model\Cache\BdcropsropsCache">
         <label>Bdcropsrops Cache</label>
         <description>Bdcropsrops custom cache type</description>
-    </type>
+    </type> -->
 </config>

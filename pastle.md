@@ -1,14 +1,15 @@
 
 php pestle.phar generate_module Bdcrops HelloPestle 1.0.0
-php pestle.phar generate_module Bdcrops Payment 1.0.0
+php pestle.phar generate_module Bdcrops GraphQLStorePickup 1.0.0
 
 pestle.phar generate_route Pulsestorm_HelloPestle frontend hello_pestle
 pestle.phar generate_view Pulsestorm_HelloPestle frontend hello_pestle_index_index Main content.phtml
 
-php pestle.phar magento2:generate:theme Bdcrops M2theme
+php pestle.phar magento2:generate:theme Bdcrops B2theme
 
 
 php pestle.phar list
+
 
 
 php pestle.phar generate_module Bdcrops JavascriptInitTutorial 1.0.0
@@ -56,6 +57,7 @@ git config --global user.name "Abdul Matin"
 git config --global user.email "matinict@gmail.com"
 git init
 git remote add origin https://gitlab.com/matinict/m2p.git
+git remote add origin https://github.com/bdcrops/b2theme.git
 git add .
 git commit -m "Initial commit"
 git push -u origin master

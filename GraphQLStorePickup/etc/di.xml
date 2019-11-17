@@ -1,0 +1,13 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Bdcrops\GraphQLStorePickup\Api\Data\StoreInterface" type="Bdcrops\GraphQLStorePickup\Model\Store"/>
+    <preference for="Bdcrops\GraphQLStorePickup\Api\StoreRepositoryInterface" type="\Bdcrops\GraphQLStorePickup\Model\StoreRepository"/>
+    <type name="Magento\Framework\GraphQl\Query\Resolver\Argument\FieldEntityAttributesPool">
+        <arguments>
+            <argument name="attributesInstances" xsi:type="array">
+                <item name="pickup_stores" xsi:type="object">
+                    \Bdcrops\GraphQLStorePickup\Model\Resolver\FilterArgument
+                </item>
+            </argument>
+        </arguments>
+    </type>
+</config>
