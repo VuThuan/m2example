@@ -61,3 +61,4 @@
 - [blogtreat](http://www.blogtreat.com/create-an-attribute-set-in-magento-2-via-installable-script/)
 - [meetanshi](https://meetanshi.com/blog/create-attribute-set-programmatically-in-magento-2/)
 - [magenticians](https://magenticians.com/create-magento-2-attribute/)
+- [magenest](https://store.magenest.com/blog/write-knockoutjs-magento-2/)

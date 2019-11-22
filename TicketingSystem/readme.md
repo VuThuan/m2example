@@ -29,16 +29,23 @@ For the purpose of this article we will create simple Ticketing system admin gri
 - [/etc/db_schema.xml](etc/db_schema.xml)
 - [/Setup/Patch/Data/NonRevertable.php](Setup/Patch/Data/NonRevertable.php)
 - [/Setup/Patch/Data/Revertable.php](Setup/Patch/Data/Revertable.php)
+   #### New CLI Command  Generating Patches?
 
-  ```
-  php bin/magento setup:db-declaration:generate-whitelist [options]
-  php bin/magento setup:db-declaration:generate-whitelist --module-name=vendor_module
 
-  php bin/magento setup:db-declaration:generate-whitelist --module-name=Bdcrops_TicketingSystem
-  php bin/magento setup:upgrade --dry-run=1 --keep-generated
-  php bin/magento setup:upgrade
+    ```
+    //generate patch
+    php bin/magento help setup:db-declaration:generate-patch
+    php bin/magento setup:db-declaration:generate-patch Bdcrops_TicketingSystem Example --type=data
+    php bin/magento setup:db-declaration:generate-patch Bdcrops_TicketingSystem Example --type=schema
+    // whitelist
+    php bin/magento setup:db-declaration:generate-whitelist [options]
+    php bin/magento setup:db-declaration:generate-whitelist --module-name=vendor_module
 
-  ```
+    php bin/magento setup:db-declaration:generate-whitelist --module-name=Bdcrops_TicketingSystem
+    php bin/magento setup:upgrade --dry-run=1 --keep-generated
+    php bin/magento setup:upgrade
+
+    ```
 
   ![](docs/schemaWhilteList.png)
   ![](docs/dataPatch.png)
