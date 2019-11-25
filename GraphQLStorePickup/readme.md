@@ -547,7 +547,7 @@
       ```
   </details>
 
-  - [etc/schema.graphqls](etc/schema.graphqls)
+- [etc/schema.graphqls](etc/schema.graphqls)
     <details><summary>Source</summary>
 
         ```
