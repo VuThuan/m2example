@@ -12,8 +12,7 @@ use Magento\Framework\GraphQl\Query\Resolver\Argument\SearchCriteria\Builder as 
 use Magento\Framework\GraphQl\Query\ResolverInterface;
 use Magento\Framework\GraphQl\Schema\Type\ResolveInfo;
 
-class PickUpStores implements ResolverInterface
-{
+class PickUpStores implements ResolverInterface {
 
     /**
      * @var GetListInterface

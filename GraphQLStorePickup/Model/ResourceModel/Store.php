@@ -6,8 +6,7 @@ namespace Bdcrops\GraphQLStorePickup\Model\ResourceModel;
 use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 use Magento\Framework\Model\ResourceModel\PredefinedId;
 
-class Store extends AbstractDb
-{
+class Store extends AbstractDb {
     /**
      * Provides possibility of saving entity with predefined/pre-generated id
      */

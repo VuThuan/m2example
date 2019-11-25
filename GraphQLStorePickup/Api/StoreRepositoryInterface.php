@@ -10,8 +10,7 @@ use Magento\Framework\Api\SearchResultsInterface;
 /**
  * @api
  */
-interface StoreRepositoryInterface
-{
+interface StoreRepositoryInterface {
     /**
      * Save the Store data.
      *

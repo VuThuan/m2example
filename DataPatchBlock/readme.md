@@ -10,7 +10,7 @@
 
 ## Step By Step Tutorials
 
-- [app/code/Bdcrops/DataPatchBlock/registration.php](registration.php)
+- Create [app/code/Bdcrops/DataPatchBlock/registration.php](registration.php)
 
     <details><summary>Source</summary>
 
@@ -145,4 +145,4 @@
   </details>
 
 ## Ref
-- [chapagain](https://blog.chapagain.com.np/magento-2-add-update-cms-static-block-via-install-upgrade-script-programmatically/)
+- [](https://blog.chapagain.com.np/magento-2-add-update-cms-static-block-via-install-upgrade-script-programmatically/)
