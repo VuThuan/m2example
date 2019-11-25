@@ -41,6 +41,21 @@
   <details><summary>Source</summary>
 
       ```
+      <?xml version="1.0"?>
+      <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+          <table name="pickup_stores" resource="default" engine="innodb" comment="Pick Up Stores">
+              <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="true"
+                      comment="Entity ID"/>
+              <column xsi:type="varchar" name="name" nullable="true" length="64"/>
+              <column xsi:type="varchar" name="street" nullable="true" length="64"/>
+              <column xsi:type="int" name="street_num" nullable="true"/>
+              <column xsi:type="varchar" name="city" nullable="true" length="64"/>
+              <column xsi:type="varchar" name="postcode" nullable="true" length="10"/>
+              <column xsi:type="decimal" name="latitude"  default="0" scale="4" precision="20" />
+              <column xsi:type="decimal" name="longitude"  default="0" scale="4" precision="20" />
+              <constraint xsi:type="primary" referenceId="PRIMARY"><column name="entity_id"/> </constraint>
+          </table>
+      </schema>
 
       ```
   </details>
@@ -49,6 +64,103 @@
   <details><summary>Source</summary>
 
       ```
+      <?php
+
+      declare(strict_types=1);
+
+      namespace Bdcrops\GraphQLStorePickup\Setup\Patch\Data;
+
+      use Bdcrops\GraphQLStorePickup\Api\Data\StoreInterface;
+      use Bdcrops\GraphQLStorePickup\Api\Data\StoreInterfaceFactory;
+      use Bdcrops\GraphQLStorePickup\Api\StoreRepositoryInterface;
+      use Magento\Framework\Api\DataObjectHelper;
+      use Magento\Framework\Setup\ModuleDataSetupInterface;
+      use Magento\Framework\Setup\Patch\DataPatchInterface;
+
+      class InitializePickUpStores implements DataPatchInterface
+      {
+          /**
+           * @var ModuleDataSetupInterface
+           */
+          private $moduleDataSetup;
+          /**
+           * @var StoreInterfaceFactory
+           */
+          private $storeInterfaceFactory;
+          /**
+           * @var StoreRepositoryInterface
+           */
+          private $storeRepository;
+          /**
+           * @var DataObjectHelper
+           */
+          private $dataObjectHelper;
+
+          /**
+           * EnableSegmentation constructor.
+           *
+           * @param ModuleDataSetupInterface $moduleDataSetup
+           */
+          public function __construct(
+              ModuleDataSetupInterface $moduleDataSetup,
+              StoreInterfaceFactory $storeInterfaceFactory,
+              StoreRepositoryInterface $storeRepository,
+              DataObjectHelper $dataObjectHelper
+          ) {
+              $this->moduleDataSetup = $moduleDataSetup;
+              $this->storeInterfaceFactory = $storeInterfaceFactory;
+              $this->storeRepository = $storeRepository;
+              $this->dataObjectHelper = $dataObjectHelper;
+          }
+
+          /**
+           * {@inheritdoc}
+           */
+          public static function getDependencies()
+          {
+              return [];
+          }
+
+          /**
+           * {@inheritdoc}
+           * @throws Exception
+           * @throws Exception
+           */
+          public function apply()
+          {
+              $this->moduleDataSetup->startSetup();
+              $maxStore = 50;
+
+              $citys = ['Banful', 'West Nakhalpara', 'Tejgaon', 'Dhaka', 'Bangladesh'];
+
+              for ($i = 1; $i <= $maxStore; $i++) {
+
+                  $storeData = [
+                      StoreInterface::NAME => 'Brick and Mortar ' . $i,
+                      StoreInterface::STREET => 'Test Street' . $i,
+                      StoreInterface::STREET_NUM => $i * random_int(1, 100),
+                      StoreInterface::CITY => $citys[random_int(0, 4)],
+                      StoreInterface::POSTCODE => $i * random_int(1000, 9999),
+                      StoreInterface::LATITUDE => random_int(4757549, 5041053) / 100000,
+                      StoreInterface::LONGITUDE => random_int(1157549, 1341053) / 100000,
+                  ];
+                  /** @var StoreInterface $store */
+                  $store = $this->storeInterfaceFactory->create();
+                  $this->dataObjectHelper->populateWithArray($store, $storeData, StoreInterface::class);
+                  $this->storeRepository->save($store);
+              }
+
+              $this->moduleDataSetup->endSetup();
+          }
+
+          /**
+           * {@inheritdoc}
+           */
+          public function getAliases()
+          {
+              return [];
+          }
+      }
 
       ```
   </details>
