@@ -4,7 +4,7 @@
 ## Goal
 - Show  Banktransfer Icon Payment Methods list frontend/Customer  Checkout.
 
-![](docs/attributeSet.png)
+![](docs/bankTransferIcon.png)
 
 
 ## Step By Step Tutorials
