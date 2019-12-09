@@ -5,6 +5,7 @@
 - Show  Banktransfer Icon Payment Methods list frontend/Customer  Checkout.
 
 ![](docs/bankTransferIcon.png)
+![](docs/bankTransferIcon02.png)
 
 
 ## Step By Step Tutorials
