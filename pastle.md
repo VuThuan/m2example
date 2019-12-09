@@ -1,6 +1,6 @@
 
 php pestle.phar generate_module Bdcrops HelloPestle 1.0.0
-php pestle.phar generate_module Bdcrops DataPatchBlock 1.0.0
+php pestle.phar generate_module Bdcrops BanktransferIcon 1.0.0
 
 pestle.phar generate_route Pulsestorm_HelloPestle frontend hello_pestle
 pestle.phar generate_view Pulsestorm_HelloPestle frontend hello_pestle_index_index Main content.phtml
@@ -49,7 +49,7 @@ https://pestle.readthedocs.io/en/latest/magento2-generate-full-module/
 
 
 git add .
-git commit -m "doc commit"
+git commit -m "BanktransferIcon"
 git push -u origin master
 
 

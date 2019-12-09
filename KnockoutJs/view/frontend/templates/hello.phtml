@@ -1,0 +1,20 @@
+<?php
+/* @var Bdcrops\KnockoutJs\Block\Hello $block */
+?>
+<div data-bind="scope: 'knockout-tutorial'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "knockout-tutorial": {
+                        "component": "Bdcrops_KnockoutJs/js/viewModel",
+                        "template" : "Bdcrops_KnockoutJs/template"
+                    }
+                }
+            }
+        }
+    }
+</script>
