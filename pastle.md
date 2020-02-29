@@ -1,4 +1,9 @@
+## [Pestle](https://github.com/astorm/pestle) 
 
+
+
+### Create Modue:
+```
 php pestle.phar generate_module Bdcrops HelloPestle 1.0.0
 php pestle.phar generate_module Bdcrops BanktransferIcon 1.0.0
 
@@ -39,11 +44,13 @@ php pestle.phar magento2:generate:controller_edit_acl app/code/Bdcrops/News/Cont
 php pestle.phar magento2:generate:remove-named-node app/code/Bdcrops/News/view/adminhtml/layout/bdcrops_news_newss_index_index.xml block bdcrops_news_block_main
 
 php bin/magento module:enable Bdcrops_News
+```
 
 
 
 
 https://alanstorm.com/magento2_pestle_code_generation/
+
 https://pestle.readthedocs.io/en/latest/magento2-generate-full-module/
 
 
