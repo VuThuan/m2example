@@ -1,6 +1,8 @@
 ## [Pestle](https://github.com/astorm/pestle) 
 
-
+    ```
+    php pestle.phar list
+    ```
 
 ### Create Modue:
 ```
@@ -11,11 +13,6 @@ pestle.phar generate_route Pulsestorm_HelloPestle frontend hello_pestle
 pestle.phar generate_view Pulsestorm_HelloPestle frontend hello_pestle_index_index Main content.phtml
 
 php pestle.phar magento2:generate:theme Bdcrops B2theme
-
-
-php pestle.phar list
-
-
 
 php pestle.phar generate_module Bdcrops JavascriptInitTutorial 1.0.0
 php pestle.phar generate_route Bdcrops_JavascriptInitTutorial frontend javascriptinittutorial
