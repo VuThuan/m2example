@@ -6,6 +6,23 @@
 
 ![](docs/graphqlPostman.png)
 
+```
+{
+  pickUpStores(
+    filter: { name: { like: "Brick and Mortar 1%" } }
+    pageSize: 2
+    currentPage: 1
+  ) {
+    total_count
+    items {
+      name
+      street
+      postcode
+    }
+  }
+}
+```
+
 
 ## Step By Step Tutorials
 
